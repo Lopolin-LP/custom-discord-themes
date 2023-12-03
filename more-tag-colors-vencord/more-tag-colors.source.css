@@ -1,0 +1,61 @@
+/**
+ * @name More Tag Colors (Vencord) | Source
+ * @author Lopolin
+ * @authorId 629692905480650763
+ * @authorLink https://github.com/lopolin-lp
+ * @description Instead of plain ol' boring AccentColor or blue, give them tags some color!
+ * @license GPLv3
+ * @version 1.0
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/more-tag-colors-vencord/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+/* things like 'at'donate exist as well... sadly i don't hove those */
+
+/* customize the colors as you may wish to have them. */
+:root {
+    --tags-col-bot:     var(---tags-col-bot, rgb(88, 101, 242));
+    --tags-col-owner:   var(---tags-col-owner, rgb(255, 127, 0));
+    --tags-col-admin:   var(---tags-col-admin, rgb(255, 0, 0));
+    --tags-col-staff:   var(---tags-col-staff, rgb(31, 191, 31));
+    --tags-col-mod:     var(---tags-col-mod, rgb(0, 161, 255));
+    --tags-col-vc-mod:  var(---tags-col-vc-mod, rgb(0, 0, 255));
+    --tags-col-webhook: var(---tags-col-webhook, rgb(127, 127, 127));
+    --tags-extra-col:   var(---tags-extra-col, rgb(0, 0, 0));
+}
+
+/* THE ACTUAL CSS, DO NOT CHANGE */
+.botTag__4211a[data-tag$="bot"] {
+    background-color: var(--tags-col-bot);
+    --tags-extra-col: var(--tags-col-bot);
+}
+.botTag__4211a[data-tag$="owner"] {
+    background-color: var(--tags-col-owner);
+    --tags-extra-col: var(--tags-col-owner);
+}
+.botTag__4211a[data-tag$="admin"] {
+    background-color: var(--tags-col-admin);
+    --tags-extra-col: var(--tags-col-admin);
+}
+.botTag__4211a[data-tag$="staff"] {
+    background-color: var(--tags-col-staff);
+    --tags-extra-col: var(--tags-col-staff);
+}
+.botTag__4211a[data-tag$="mod"] {
+    background-color: var(--tags-col-mod);
+    --tags-extra-col: var(--tags-col-mod);
+}
+.botTag__4211a[data-tag$="vc mod"] {
+    background-color: var(--tags-col-vc-mod);
+    --tags-extra-col: var(--tags-col-vc-mod);
+}
+.botTag__4211a[data-tag$="webhook"] {
+    background-color: var(--tags-col-webhook);
+    --tags-extra-col: var(--tags-col-webhook);
+}
+
+/* special cases */
+.botTag__4211a[data-tag^="bot • "] {
+    background-color: unset;
+    background: linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%);
+}

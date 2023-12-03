@@ -1,0 +1,32 @@
+/**
+ * @name BetterDiscordFont
+ * @description Applies all Patches of the BetterDiscordFont Suite.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/better-discord-font/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/**
+    Here's a list of all Patches available.
+    Simply paste everything on the same line after the dash (-) into the lines between "START" and "END" the things you want to have enabled, or remove them.
+    By default everything is enabled.
+
+    Old Discord Font - @import url(https://raw.githubusercontent.com/Overimagine1/old-discord-font/main/source.css);
+    Emoji            - @import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/better-discord-font/BDF-EMJ.css);
+
+    !! Don't forget to put the "NotoColorEmoji-Regular.ttf" file inside the themes directory as well if you want to use the Emojis !!
+    !! See the GitHub Link Above for instructions !!
+*/
+
+/* START */
+
+@import url(https://raw.githubusercontent.com/Overimagine1/old-discord-font/main/source.css);
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/better-discord-font/BDF-EMJ.css);
+
+/*  END  */
+
+/* Other Stuff, don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/better-discord-font/BDF-ROOT.css);

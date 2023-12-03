@@ -1,0 +1,15 @@
+/**
+ * @name NotoColorEmoji Import
+ * @description Imports NotoColorEmoji from a local path. Part of the BetterDiscordFont Suite.
+ * @author Lopolin
+ * @version 0.1
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/better-discord-font/
+ * @website https://lopolin-lp.github.io/better-discord-font/
+ */
+@font-face {
+    font-family:NotoColorEmoji;
+    font-style:normal;
+    font-weight:400;
+    src:url(./NotoColorEmoji-Regular.ttf) format("truetype")
+}
