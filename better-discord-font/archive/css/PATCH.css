@@ -1,0 +1,14 @@
+/**
+ * @name BetterDiscordFont
+ * @description Applies all Patches of the BetterDiscordFont Suite.
+ * @author Lopolin
+ * @version 0.1
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/better-discord-font/
+ * @website https://lopolin-lp.github.io/better-discord-font/
+ */
+:root {
+    --font: Whitney, "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif, NotoColorEmoji !important;
+    --font-primary: var(--font) !important;
+    --font-display: var(--font) !important;
+}

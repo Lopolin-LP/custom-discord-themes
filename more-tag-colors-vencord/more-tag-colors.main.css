@@ -1,0 +1,27 @@
+/**
+ * @name More Tag Colors (Vencord)
+ * @author Lopolin
+ * @authorId 629692905480650763
+ * @authorLink https://github.com/lopolin-lp
+ * @description Instead of plain ol' boring AccentColor or blue, give them tags some color!
+ * @license GPLv3
+ * @version 1.0
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/more-tag-colors-vencord/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/* Customizable Values */
+:root {                                          /* defaultColor         ;   desciption     */
+    ---tags-col-bot:     rgb(88, 101, 242);     /* rgb(88, 101, 242)    ;   Discord Purple */
+    ---tags-col-owner:   rgb(255, 127, 0);      /* rgb(255, 127, 0)     ;   Orange         */
+    ---tags-col-admin:   rgb(255, 0, 0);        /* rgb(255, 0, 0)       ;   Red            */
+    ---tags-col-staff:   rgb(31, 191, 31);      /* rgb(31, 191, 31)     ;   Green-ish      */
+    ---tags-col-mod:     rgb(0, 161, 255);      /* rgb(0, 161, 255)     ;   Light Blue     */
+    ---tags-col-vc-mod:  rgb(0, 0, 255);        /* rgb(0, 0, 255)       ;   Dark Blue      */
+    ---tags-col-webhook: rgb(127, 127, 127);    /* rgb(127, 127, 127)   ;   Gray           */
+    ---tags-extra-col:   rgb(0, 0, 0);          /* rgb(0, 0, 0)         ;   used when bots have an extra tag which is not covered */
+}
+
+/* don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/more-tag-colors-vencord/more-tag-colors.source.css);

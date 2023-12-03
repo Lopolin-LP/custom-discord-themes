@@ -1,0 +1,18 @@
+/**
+ * @name Condensed Chat Icons
+ * @description So many plugins put their silly little icon in this already dense spot. On a 4:3 monitor that is straight up hell!
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/condensed-chat-icons/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/* Customizable Values */
+:root {
+    --min-width-of-text-area: 60%, /* default is 60% */
+}
+
+/* real css, don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/condensed-chat-icons/condensed-chat-icons.source.css);
