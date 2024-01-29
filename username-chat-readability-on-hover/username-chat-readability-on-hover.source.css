@@ -1,0 +1,19 @@
+/**
+ * @name Username Chat Readability On Hover | Source
+ * @description Black Theme, Black Username. Good luck reading it in chat. Now you can when you hover over it.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/username-chat-readability-on-hover/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+:root {
+    ---custom-username-bg-shadow-hover: var(--custom-username-bg-shadow-hover, #fff);
+    ---custom-username-bg-shadow-radius: var(--custom-username-bg-shadow-radius, 12px);
+}
+
+.username_d30d99:hover {
+    text-shadow: 0 0 var(---custom-username-bg-shadow-radius) var(---custom-username-bg-shadow-hover);
+}
