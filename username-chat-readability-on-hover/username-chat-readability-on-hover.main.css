@@ -9,11 +9,11 @@
  * @invite https://discord.gg/pduA47hxx7
 */
 
+/* real css, don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/condensed-chat-icons/condensed-chat-icons.source.css);
+
 /* customize your values here */
 :root {
     --custom-username-bg-shadow-hover: #fff; /* default is #fff */
     --custom-username-bg-shadow-radius: 12px; /* default is 12px */
 }
-
-/* real css, don't touch */
-@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/username-chat-readability-on-hover/username-chat-readability-on-hover.source.css);
