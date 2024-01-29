@@ -11,6 +11,9 @@
  * @invite https://discord.gg/pduA47hxx7
 */
 
+/* don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/more-tag-colors-vencord/more-tag-colors.source.css);
+
 /* Customizable Values */
 :root {                                          /* defaultColor         ;   desciption     */
     ---tags-col-bot:     rgb(88, 101, 242);     /* rgb(88, 101, 242)    ;   Discord Purple */
@@ -22,6 +25,3 @@
     ---tags-col-webhook: rgb(127, 127, 127);    /* rgb(127, 127, 127)   ;   Gray           */
     ---tags-extra-col:   rgb(0, 0, 0);          /* rgb(0, 0, 0)         ;   used when bots have an extra tag which is not covered */
 }
-
-/* don't touch */
-@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/more-tag-colors-vencord/more-tag-colors.source.css);
