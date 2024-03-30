@@ -9,11 +9,6 @@
  * @invite https://discord.gg/pduA47hxx7
 */
 
-/* customize your values here!! */
-.channelTextArea__648e5 {
-    ---min-width-of-text-area: var(--min-width-of-text-area, 60%); /* default is 60% */
-}
-
 /* real css, do not touch. */
 .channelTextArea__648e5 .buttons__7ecff {
     flex-wrap: wrap;
@@ -33,8 +28,8 @@
     display: none;
 }
 .channelTextArea__648e5 .textArea_a86690 {
-    min-width: var(---min-width-of-text-area, 60%);
     flex-basis: content;
+    flex-grow: 1000000;
 }
 .channelTextArea__648e5 .buttons__7ecff > * {
     width: var(--primary-size-icons);
