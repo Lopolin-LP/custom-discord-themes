@@ -59,3 +59,10 @@
     background-color: unset;
     background: linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%);
 }
+
+/* clyde */
+.botTag__4211a[data-tag$="ai"] {
+    background-color: unset;
+    background: linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
+    backdrop-filter: brightness(0%);
+}
