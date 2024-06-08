@@ -68,7 +68,7 @@
 }
 
 /* system */
-.botTag__4211a[data-tag$="system"] {
+.botTag__4211a[data-tag$="official"] {
     background-color: unset;
     background: linear-gradient(90deg, #5BCEFA88, #F5A9B888, #FFFFFF88, #F5A9B888, #5BCEFA88);
     backdrop-filter: brightness(0%);
