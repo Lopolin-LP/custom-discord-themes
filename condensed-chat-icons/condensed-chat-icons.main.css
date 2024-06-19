@@ -14,5 +14,5 @@
 
 /* Customizable Values */
 :root {
-    --min-width-of-text-area: 60%, /* default is 60% */
+    --min-width-of-text-area: 60%; /* default is 60% */
 }
