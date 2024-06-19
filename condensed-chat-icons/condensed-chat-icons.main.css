@@ -11,3 +11,8 @@
 
 /* real css, don't touch */
 @import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/condensed-chat-icons/condensed-chat-icons.source.css);
+
+/* Customizable Values */
+:root {
+    --min-width-of-text-area: 60%, /* default is 60% */
+}

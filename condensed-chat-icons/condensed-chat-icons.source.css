@@ -9,8 +9,13 @@
  * @invite https://discord.gg/pduA47hxx7
 */
 
+/* customize your values here!! */
+.channelTextArea_d0696b {
+    ---min-width-of-text-area: var(--min-width-of-text-area, 60%); /* default is 60% */
+}
+
 /* real css, do not touch. */
-.channelTextArea__648e5 .buttons__7ecff {
+.channelTextArea_d0696b .buttons_d0696b {
     flex-wrap: wrap;
     overflow-y: scroll;
     overflow-x: visible;
@@ -24,14 +29,14 @@
     --primary-size-icons: var(--custom-channel-textarea-text-area-height);
     flex-grow: 1;
 }
-.channelTextArea__648e5 .buttons__7ecff::-webkit-scrollbar {
+.channelTextArea_d0696b .buttons_d0696b::-webkit-scrollbar {
     display: none;
 }
-.channelTextArea__648e5 .textArea_a86690 {
+.channelTextArea_d0696b .textArea_d0696b {
+    min-width: var(---min-width-of-text-area, 60%);
     flex-basis: content;
-    flex-grow: 1000000;
 }
-.channelTextArea__648e5 .buttons__7ecff > * {
+.channelTextArea_d0696b .buttons_d0696b > * {
     width: var(--primary-size-icons);
     height: var(--primary-size-icons);
     min-width: var(--primary-size-icons);
