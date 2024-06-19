@@ -12,7 +12,7 @@
 */
 /* things like 'at'donate exist as well... sadly i don't hove those */
 
-/* customize the colors as you may wish to have them. */
+/* customize the colors as you may wish to have them. as they are directly used as a background, you could also use a background image */
 :root {
     --tags-col-bot:     var(---tags-col-bot, rgb(88, 101, 242));
     --tags-col-owner:   var(---tags-col-owner, rgb(255, 127, 0));
@@ -22,54 +22,58 @@
     --tags-col-vc-mod:  var(---tags-col-vc-mod, rgb(0, 0, 255));
     --tags-col-webhook: var(---tags-col-webhook, rgb(127, 127, 127));
     --tags-extra-col:   var(---tags-extra-col, rgb(0, 0, 0));
+
+    /* The color used for apps which have a second tag */
+    --tags-special-app-combined: var(---tags-special-app-combined, linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%));
+
+    /* special colors, used for rare or single use tags */
+    --tags-col-ai: var(---tags-col-ai, linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa));
+    --tags-col-official: var(---tags-col-official, linear-gradient(90deg, #5BCEFA88, #F5A9B888, #FFFFFF88, #F5A9B888, #5BCEFA88));
 }
 
 /* THE ACTUAL CSS, DO NOT CHANGE */
-.botTag__4211a[data-tag$="app"] {
-    background-color: var(--tags-col-bot);
+[class*="botTag_"][data-tag$="app"] {
+    background: var(--tags-col-bot);
     --tags-extra-col: var(--tags-col-bot);
 }
-.botTag__4211a[data-tag$="owner"] {
-    background-color: var(--tags-col-owner);
+[class*="botTag_"][data-tag$="owner"] {
+    background: var(--tags-col-owner);
     --tags-extra-col: var(--tags-col-owner);
 }
-.botTag__4211a[data-tag$="admin"] {
-    background-color: var(--tags-col-admin);
+[class*="botTag_"][data-tag$="admin"] {
+    background: var(--tags-col-admin);
     --tags-extra-col: var(--tags-col-admin);
 }
-.botTag__4211a[data-tag$="staff"] {
-    background-color: var(--tags-col-staff);
+[class*="botTag_"][data-tag$="staff"] {
+    background: var(--tags-col-staff);
     --tags-extra-col: var(--tags-col-staff);
 }
-.botTag__4211a[data-tag$="mod"] {
-    background-color: var(--tags-col-mod);
+[class*="botTag_"][data-tag$="mod"] {
+    background: var(--tags-col-mod);
     --tags-extra-col: var(--tags-col-mod);
 }
-.botTag__4211a[data-tag$="vc mod"] {
-    background-color: var(--tags-col-vc-mod);
+[class*="botTag_"][data-tag$="vc mod"] {
+    background: var(--tags-col-vc-mod);
     --tags-extra-col: var(--tags-col-vc-mod);
 }
-.botTag__4211a[data-tag$="webhook"] {
-    background-color: var(--tags-col-webhook);
+[class*="botTag_"][data-tag$="webhook"] {
+    background: var(--tags-col-webhook);
     --tags-extra-col: var(--tags-col-webhook);
 }
 
 /* special cases */
-.botTag__4211a[data-tag^="app • "] {
-    background-color: unset;
-    background: linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%);
+[class*="botTag_"][data-tag^="app • "] {
+    background: var(--tags-special-app-combined);
 }
 
 /* clyde */
-.botTag__4211a[data-tag$="ai"] {
-    background-color: unset;
-    background: linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
+[class*="botTag_"][data-tag$="ai"] {
+    background: var(--tags-col-ai);
     backdrop-filter: brightness(0%);
 }
 
 /* system */
-.botTag__4211a[data-tag$="official"] {
-    background-color: unset;
-    background: linear-gradient(90deg, #5BCEFA88, #F5A9B888, #FFFFFF88, #F5A9B888, #5BCEFA88);
+[class*="botTag_"][data-tag$="official"] {
+    background: var(--tags-col-official);
     backdrop-filter: brightness(0%);
 }

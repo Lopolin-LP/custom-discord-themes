@@ -5,6 +5,6 @@ I made it to work with Vencord, however it may work with other things as well, i
 ![Showcase](./showcase.png)
 
 ## Customizable Values
-All have a Value of [\<color\>](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
-All Change the Color of the given Label. Just read the name and you'll figure out which one is for which.
-As for `---tags-extra-col`... just keep it as is, you won't see it anyways.
+See [background on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background), as we use the shorthand property `background`, allowing for colors, gradient and images to be used.
+To change the colors for the different tags, just read the name and you'll figure out which one is for which.
+As for `---tags-extra-col`... just keep it as is, it's used for apps which have a second tag (usually staff or admin).
