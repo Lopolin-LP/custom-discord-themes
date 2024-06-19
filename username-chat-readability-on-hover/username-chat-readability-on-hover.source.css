@@ -14,6 +14,6 @@
     ---custom-username-bg-shadow-radius: var(--custom-username-bg-shadow-radius, 12px);
 }
 
-[class^="username__"]:hover {
+[class*="username_"]:hover {
     text-shadow: 0 0 var(---custom-username-bg-shadow-radius) var(---custom-username-bg-shadow-hover);
 }
