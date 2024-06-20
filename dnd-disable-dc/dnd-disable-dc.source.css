@@ -1,0 +1,83 @@
+/**
+ * @name DnD Disable DC | Source
+ * @description Removes everything in Discord when on DnD.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/condensed-chat-icons/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+:root {
+    ---message-on-dnd: var(--message-on-dnd, "");
+    ---message-size-on-dnd: var(--message-size-on-dnd, 10vw);
+    ---message-color-dnd: var(--message-color-dnd, #fff2);
+    ---background-on-dnd: var(--background-on-dnd);
+}
+
+/* get aria-label with document.querySelector(".wrapper_c51b4e.avatar_b2ca13").getAttribute("aria-label") */
+
+/* ------ */
+/* the bg */
+/* ------ */
+/* html:has(.content_a4d4d9 .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) */
+/* html:has(.wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) #app-mount::after { */
+
+/* hopefully it doesn't need to check EVERYTHING by making this as specific as possible */
+:root:has(body > #app-mount > .appAsidePanelWrapper_bd26cc > .notAppAsidePanel_bd26cc > .app_bd26cc > .app_a01fb1 > .layers_d4b6c5.layers_a01fb1 > .layer_d4b6c5.baseLayer_d4b6c5 > .container_a4d4d9 > .base_a4d4d9 > .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 > .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) {
+    --dnd-dc-d-hideit: hidden !important;
+    --dnd-dc-d-noneit: none !important;
+    --dnd-dc-d-border-radius: 10px;
+    --dnd-dc-d-lowerbg: #0000;
+}
+:root:has(body > #app-mount > .appAsidePanelWrapper_bd26cc > .notAppAsidePanel_bd26cc > .app_bd26cc > .app_a01fb1 > .layers_d4b6c5.layers_a01fb1 > .layer_d4b6c5.baseLayer_d4b6c5 > .container_a4d4d9 > .base_a4d4d9 > .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 > .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) #app-mount::after {
+    content: var(---message-on-dnd, "");
+    font-size: var(---message-size-on-dnd, 10vw);
+    background: var(---background-on-dnd);
+    color: var(---message-color-dnd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --------------- */
+/* disabling stuff */
+/* --------------- */
+
+/* disable server list */
+/* disable server list */
+.container_a4d4d9 .wrapper_fea3ef.guilds_a4d4d9,
+/* disable main content */
+.base_a4d4d9 .content_a4d4d9 > *:not(:first-child),
+/* sidebar, except lower modal */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > *:not(.panels_a4d4d9) {
+    visibility: var(--dnd-dc-d-hideit);
+}
+
+/* minimize account view */
+.userPopoutOverlayBackground_c69a7b.overlayBackground_c69a7b :not(.menu_d90b3d.flexible_d90b3d.menu_ad5fac, .menu_d90b3d.flexible_d90b3d.menu_ad5fac *) {
+    display: var(--dnd-dc-d-noneit);
+}
+
+/* ---------------------- */
+/* extras for lower modal */
+/* ---------------------- */
+/* modal itself */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9,
+/* container with user */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_b2ca13,
+/* container with vc */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac {
+    border-radius: var(--dnd-dc-d-border-radius);
+    background: var(--dnd-dc-d-lowerbg);
+}
+/* fix colors of container with vc */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac button,
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac .disabledButtonWrapper_dd4f85 {
+    background: var(--dnd-dc-d-lowerbg);
+}

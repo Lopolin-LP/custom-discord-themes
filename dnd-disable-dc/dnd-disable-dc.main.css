@@ -1,0 +1,36 @@
+/**
+ * @name DnD Disable DC
+ * @description Removes everything in Discord when on DnD.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/condensed-chat-icons/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/dnd-disable-dc/dnd-disable-dc.source.css);
+
+:root {
+    /* message to be shown when on DnD */
+    /* Default: "" */
+    /* Example: "No Distractions" */
+    --message-on-dnd: "";
+    
+    /* size of message */
+    /* Default: 10vw */
+    /* Example: 7vw */
+    --message-size-on-dnd: 10vw;
+
+    /* color of message */
+    /* Default: #fff2 */
+    /* Example: #0002 */
+    --message-color-dnd: #fff2;
+    
+    /* background */
+    /* Default: */
+    /* Example:   radial-gradient(#000000 70%, #ff7f0022) */
+    /* Example 2: linear-gradient(135deg, #7f00ff44, #00000044) */
+    /* Completely Black: #000 */
+    --background-on-dnd: ;
+}
