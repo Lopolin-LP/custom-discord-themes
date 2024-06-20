@@ -2,6 +2,8 @@
 Removes everything in Discord when on DnD.
 Yes, no distraction, what DnD should be.
 
+IMPORTANT: If you are still in a channel, messages will be marked as read, so go to the "Friends" tab or similar to prevent this.
+
 *Note: there may be very slight performance issues while interacting with the client while this theme is active. There may also not be any issues. You've been warned.*
 
 ![Showcase](./showcase.png) *I love this showcase, the reason is nothing interesting*
