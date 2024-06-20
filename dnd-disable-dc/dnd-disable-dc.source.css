@@ -56,12 +56,12 @@
 .base_a4d4d9 .content_a4d4d9 > *:not(:first-child),
 /* sidebar, except lower modal */
 .base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > *:not(.panels_a4d4d9) {
-    visibility: var(--dnd-dc-d-hideit);
+    visibility: var(--dnd-dc-d-hideit, revert);
 }
 
 /* minimize account view */
 .userPopoutOverlayBackground_c69a7b.overlayBackground_c69a7b :not(.menu_d90b3d.flexible_d90b3d.menu_ad5fac, .menu_d90b3d.flexible_d90b3d.menu_ad5fac *) {
-    display: var(--dnd-dc-d-noneit);
+    display: var(--dnd-dc-d-noneit, revert);
 }
 
 /* ---------------------- */
@@ -72,7 +72,9 @@
 /* container with user */
 .base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_b2ca13,
 /* container with vc */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac {
-    border-radius: var(--dnd-dc-d-border-radius);
-    background: var(--dnd-dc-d-lowerbg);
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac,
+/* activity above modal */
+.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .panel_bf1a22.activityPanel_a4d4d9 {
+    border-radius: var(--dnd-dc-d-border-radius, revert);
+    background: var(--dnd-dc-d-lowerbg, revert);
 }
