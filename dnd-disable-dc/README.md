@@ -13,5 +13,5 @@ Name | Value | Description
 -|-|-
 --message-on-dnd | [\<string\>](https://developer.mozilla.org/en-US/docs/Web/CSS/string), eg. "Hello World", "", "No Distractions" | The Text to be displayed
 --message-size-on-dnd | [\<length\>](https://developer.mozilla.org/en-US/docs/Web/CSS/string), eg. 16px, 10vw, 300% | Size of Text to be displayed
---message-color-dnd | [\<color\>](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), eg. 16px, 10vw, 300% | Size of Text to be displayed
+--message-color-dnd | [\<color\>](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), eg. 16px, 10vw, 300% | Color of Text to be displayed
 --background-on-dnd | [`background`](https://developer.mozilla.org/en-US/docs/Web/CSS/background), eg. #000, url("example.com/img.png") | Background to use on DnD
