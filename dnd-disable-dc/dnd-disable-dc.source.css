@@ -60,7 +60,7 @@
 }
 
 /* minimize account view */
-.userPopoutOverlayBackground_c69a7b.overlayBackground_c69a7b :not(.menu_d90b3d.flexible_d90b3d.menu_ad5fac, .menu_d90b3d.flexible_d90b3d.menu_ad5fac *) {
+#popout_61 .userPopoutOverlayBackground_c69a7b.overlayBackground_c69a7b > :not(.menu_d90b3d.flexible_d90b3d.menu_ad5fac, .menu_d90b3d.flexible_d90b3d.menu_ad5fac > *) {
     display: var(--dnd-dc-d-noneit, revert);
 }
 
