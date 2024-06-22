@@ -55,8 +55,10 @@ Name | Description | Notes
 [Condensed Chat Icons](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/condensed-chat-icons) | So many plugins put their silly little icon in this already dense spot. This will wrap the gift, emoji, gif, etc. icons to the next line if the chat input field needs more space.
 [More Tag Colors (Vencord)](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/more-tag-colors-vencord) | Makes Bot/Admin/Staff Tags colorful.
 [Username Chat Readability On Hover](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/username-chat-readability-on-hover) | Black Theme, Black Username. Good luck reading it in chat. Now you can when you hover over it.
+[DnD Disable DC](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/dnd-disable-dc) | Removes everything in Discord when on DnD. Yes, no distraction, what DnD should be. | 2
 
 1 - Requires different installation steps, see `README.md`
+2 - Potential performance issues, impact varies.
 
 ## ToDo
 *Nothing!*
