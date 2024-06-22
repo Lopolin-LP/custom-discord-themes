@@ -5,7 +5,7 @@
  * @authorLink https://github.com/lopolin-lp
  * @description Instead of plain ol' boring AccentColor or blue, give them tags some color!
  * @license GPLv3
- * @version 1.0
+ * @version 1.1
  * @source https://github.com/Lopolin-LP/custom-discord-themes/more-tag-colors-vencord/
  * @website https://lopolin-lp.github.io/
  * @invite https://discord.gg/pduA47hxx7
@@ -26,7 +26,7 @@
     ---tags-extra-col:   rgb(0, 0, 0);          /* rgb(0, 0, 0)         ;   used when bots have an extra tag which is not covered */
 
     /* The color used for apps which have a second tag */
-    --tags-special-app-combined: var(---tags-special-app-combined, linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%));
+    ---tags-special-app-combined: linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%);
 
     /* special colors, used for rare or single use tags */
     ---tags-col-ai: linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
