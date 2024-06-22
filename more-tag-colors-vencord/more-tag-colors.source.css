@@ -23,9 +23,6 @@
     --tags-col-webhook: var(---tags-col-webhook, rgb(127, 127, 127));
     --tags-extra-col:   var(---tags-extra-col, rgb(0, 0, 0));
 
-    /* The color used for apps which have a second tag */
-    --tags-special-app-combined: var(---tags-special-app-combined, linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%));
-
     /* special colors, used for rare or single use tags */
     --tags-col-ai: var(---tags-col-ai, linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa));
     --tags-col-official: var(---tags-col-official, linear-gradient(90deg, #5BCEFA88, #F5A9B888, #FFFFFF88, #F5A9B888, #5BCEFA88));
@@ -63,7 +60,8 @@
 
 /* special cases */
 [class*="botTag_"][data-tag^="app • "] {
-    background: var(--tags-special-app-combined);
+    /* note: must be customized through the source, as it otherwise just won't work */
+    background: linear-gradient(90deg, var(--tags-col-bot) 30%, var(--tags-extra-col) 70%);
 }
 
 /* clyde */
