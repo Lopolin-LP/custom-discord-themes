@@ -1,0 +1,39 @@
+/**
+ * @name Full Text | Source
+ * @description Discord often truncates the text of many Elements (channels, usernames, etc.), this disables that and wraps text accordingly.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/full-text/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/* real css, do not touch. */
+.activityText_c91bad, .name_ec8679, .overflow_a82120, .name_a31c43.username_de3235, .membersGroup_cbd271.container_a5ad5c, .activityText_a31c43 { /* Apply styles to elements affected by it */
+    overflow: visible;
+    white-space: wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.layout_ec8679, .memberInner_a31c43.layout_d808b0 { /* Members & Group DMs */
+    height: auto;
+    min-height: 42px;
+}
+.membersGroup_cbd271.container_a5ad5c { /* Roles */
+    height: auto;
+    min-height: 40px;
+}
+.content_d808b0 * { /* Wrap content of Members List */
+    flex-wrap: wrap;
+}
+.activity_a31c43 { /* ...except this */
+    flex-wrap: nowrap;
+}
+[class*="descriptionClamp_"] { /* disable line clamp of Bios */
+    max-height: max-content;
+    -webkit-line-clamp: unset !important;
+}
+[class*="viewFullBio_"] { /* we already see it. */
+    display: none;
+}

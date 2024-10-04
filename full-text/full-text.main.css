@@ -1,0 +1,13 @@
+/**
+ * @name Full Text
+ * @description Discord often truncates the text of many Elements (channels, usernames, etc.), this disables that and wraps text accordingly.
+ * @author Lopolin
+ * @version 1.0
+ * @authorId 629692905480650763
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/full-text/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/* real css, don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/full-text/full-text.source.css);
