@@ -10,12 +10,12 @@
 */
 
 /* customize your values here!! */
-.channelTextArea_d0696b {
+.channelTextArea_bdf0de {
     ---min-width-of-text-area: var(--min-width-of-text-area, 60%); /* default is 60% */
 }
 
 /* real css, do not touch. */
-.channelTextArea_d0696b .buttons_d0696b {
+.channelTextArea_bdf0de .buttons_bdf0de {
     flex-wrap: wrap;
     overflow-y: scroll;
     overflow-x: visible;
@@ -29,14 +29,14 @@
     --primary-size-icons: var(--custom-channel-textarea-text-area-height);
     flex-grow: 1;
 }
-.channelTextArea_d0696b .buttons_d0696b::-webkit-scrollbar {
+.channelTextArea_bdf0de .buttons_bdf0de::-webkit-scrollbar {
     display: none;
 }
-.channelTextArea_d0696b .textArea_d0696b {
+.channelTextArea_bdf0de .textArea_bdf0de {
     min-width: var(---min-width-of-text-area, 60%);
     flex-basis: content;
 }
-.channelTextArea_d0696b .buttons_d0696b > * {
+.channelTextArea_bdf0de .buttons_bdf0de > * {
     width: var(--primary-size-icons);
     height: var(--primary-size-icons);
     min-width: var(--primary-size-icons);
