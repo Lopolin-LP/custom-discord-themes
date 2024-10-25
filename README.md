@@ -8,7 +8,8 @@ Each Folder has their own theme and `README.md` inside. Check the `README.md` fo
    - [Load from file](#load-from-file)
    - [Which should I choose?](#which-should-i-choose)
 2. [Themes Overview](#themes-overview)
-3. [ToDo](#todo)
+3. [Snippets](#snippets)
+4. [ToDo](#todo)
 
 ## Installation
 *WARNING: Please read the `README.md` of each theme as well! It may require some extra steps than just downloading it.*
@@ -60,6 +61,20 @@ Name | Description | Notes
 
 1 - Requires different installation steps, see `README.md`<br>
 2 - Potential performance issues, impact varies.
+
+## Snippets
+In the root directory you'll find a file called `snippets.css`. In this I have a few snippets that I've created and keep in my QuickCSS active. None of these are worth making their own theme for, as they're so small. Take a look, maybe you'll find something cool!
+
+Currently the following Snippets are available (in order as in file):
+- make scrollbars exist
+- make Spoilers Visible (as my background is pure black)
+- disable close DMs
+- highlight channel of any channel you like in DMs list
+- colored pins
+- move app button in bottom bar to left
+- gay status bubble
+- fully visible profile effects
+- Resize Sidebar
 
 ## ToDo
 *Nothing!*
