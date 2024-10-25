@@ -1,0 +1,133 @@
+/* make scrollbars exist */
+::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: #7f7f7f !important;
+}
+
+/* make Spoilers Visible (as my background is pure black) */
+[class^="spoilerContent"] {
+    background-color: #111;
+}
+
+/* disable close DMs */
+[class*="channel_"]:hover div[class*="closeButton_"][aria-label="Close DM"] {
+    display: none;
+}
+
+/* highlight channel of any channel you like in DMs list, you need to change a few things tho */
+[class*=channel_][class*=container_] > *:has(a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"]) {
+    background-image: url("vencord:///themes/FILE-IN-THEMES-DIR.png");
+    background-size: cover;
+    background-position: center;
+    background-position-y: -40px;
+    border-radius: 20px;
+}
+[class*=channel_][class*=container_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
+    background: linear-gradient(135deg, #ff007f3f 50%, #ff00ff3f);
+    border-radius: 20px;
+    min-height: 150px;
+    height: 100%;
+    width: 100%;
+    color: #000;
+    text-shadow: 2px 2px 2px #ffff, -2px -2px 2px #ffff,
+                 -2px 2px 2px #ffff, 2px -2px 2px #ffff;
+    backdrop-filter: blur(8px);
+}
+
+[class*=channel_][class*=container_] [class*=selected_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
+    background: linear-gradient(135deg, #ff007f7f 50%, #ff00ff7f);
+}
+
+/* colored pins (vencord). requires a lot of manual work */
+
+/* START COLORED PINS */
+
+/*              Put exact color values of your colored category here ->  (RRR, GGG, BBB) */
+.content_eed6a8 [class*="vc-pindms-section-container"][style*="color: rgb(255, 0, 127);"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+    color: #ff007f; /* color you would like to use */
+}
+/* and duplicate the three lines above (starting with ".content...", "color:..." and "}" respectively) and repeat for each category.
+THEY MUST BE IN ORDER AS THE CATEGORIES */
+
+.content_eed6a8 [class*="vc-pindms-section-container"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+    border-left: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
+    border-right: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
+    border-radius: 0;
+    background-color: color-mix(in srgb, currentColor 12.5%, transparent);
+}
+.content_eed6a8 [class*="vc-pindms-section-container"] + li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+    border-top: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.content_eed6a8 [class*="vc-pindms-section-container"] ~ li:has(+ .privateChannelsHeaderContainer_c47fa9) {
+    border-bottom: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* END COLORED PINS */
+
+/* move app button in bottom bar to left */
+:root {
+    --app-button-sickerheight: 0px;
+    --app-button-mediaheight: 0px;
+}
+:root:has(.scrollableContainer_bdf0de.themedBackground_bdf0de .stickerPreviews_ef287f) {
+    --app-button-sickerheight: calc(51px + 20px + 1px);
+}
+:root:has(.scrollableContainer_bdf0de.themedBackground_bdf0de .channelAttachmentArea_e8c527) {
+    --app-button-mediaheight: calc(216px + 30px + 3px);
+}
+div[class^="channelAppLauncher_"] {
+    position: absolute;
+    margin-left: 0px;
+    transform: translateY(calc(var(--app-button-mediaheight) + var(--app-button-sickerheight) + 0%));
+}
+div[class^="channelAppLauncher_"] button {
+    background-color: transparent;
+}
+div[class^="channelBottomBarArea_"]:has(div[class^="replyBar_"]) div[class^="channelAppLauncher_"] {
+    margin-top: 32px;
+}
+div[class*="sansAttachButton_"] {
+    padding-left: 46px;
+}
+div[class^="channelBottomBarArea_"] {
+    align-items: flex-start;
+}
+div[class*="positionLayer_"]:has([class*="positionContainer_"][aria-label="Application Launcher"]) {
+    left: 312px !important; /* 72px + 240px */
+    right: unset !important;
+}
+div[class*="barBase_"] {
+    right: 16px;
+}
+
+/* gay status bubble */
+[class*="statusBubbleOuter_"], [class*="statusBubbleOuter_"]:before, [class*="statusBubbleOuter_"]:after {
+    border-color: #fff !important;
+}
+[class*="statusBubble_"] {
+    background: linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
+    backdrop-filter: brightness(0%);
+    background-color: unset!important;
+}
+
+/* fully visible profile effects */
+[class*="profileEffects"] {
+    transition: backdrop-filter ease-in-out 0.2s, opacity ease-in-out 0.2s;
+}
+:not(:has([class*="fullSizeOuter_"])):not(:hover) [class*="profileEffects"]:has(img[src*="intro.png"]) {
+    backdrop-filter: blur(4px);
+    opacity: 100%;
+}
+
+/* Resize Sidebar */
+.sidebar_a4d4d9 {
+    resize: horizontal;
+}
+.sidebar_a4d4d9 ul > *, .friendsButtonContainer_f0963d > li {
+    width: 100%;
+    max-width: calc(100% - 8px);
+}
