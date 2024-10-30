@@ -13,7 +13,6 @@
 .activityText_c91bad, .name_ec8679, .overflow_a82120, .name_a31c43.username_de3235, .membersGroup_cbd271.container_a5ad5c, .activityText_a31c43 { /* Apply styles to elements affected by it */
     overflow: visible;
     white-space: wrap;
-    word-break: break-all;
     word-wrap: break-word;
 }
 .layout_ec8679, .memberInner_a31c43.layout_d808b0 { /* Members & Group DMs */
@@ -36,4 +35,7 @@
 }
 [class*="viewFullBio_"] { /* we already see it. */
     display: none;
+}
+.children_fc4f04 { /* names in DMs next to "AKA" will cause top bar to expand to over 1k px in height */
+    max-height: 64px;
 }
