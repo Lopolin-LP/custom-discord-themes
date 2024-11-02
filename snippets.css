@@ -10,7 +10,7 @@
 }
 
 /* disable close DMs */
-[class*="channel_"]:hover div[class*="closeButton_"][aria-label="Close DM"] {
+[class*="channel_"] div[class*="closeButton_"][aria-label="Close DM"] {
     display: none;
 }
 
