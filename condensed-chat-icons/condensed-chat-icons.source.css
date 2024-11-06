@@ -43,3 +43,6 @@
     min-height: var(--primary-size-icons);
     justify-content: center;
 }
+:where(.outer_c69a7b).panel_c69a7b {
+    min-width: fit-content;
+}
