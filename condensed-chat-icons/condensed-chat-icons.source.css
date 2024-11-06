@@ -44,5 +44,5 @@
     justify-content: center;
 }
 :where(.outer_c69a7b).panel_c69a7b {
-    min-width: fit-content;
+    min-width: min-content;
 }
