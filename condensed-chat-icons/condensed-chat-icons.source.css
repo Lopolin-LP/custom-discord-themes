@@ -44,5 +44,7 @@
     justify-content: center;
 }
 :where(.outer_c69a7b).panel_c69a7b {
-    min-width: min-content;
+    /* Consistent sizing of side panel */
+    min-width: 340px;
+    max-width: 340px;
 }
