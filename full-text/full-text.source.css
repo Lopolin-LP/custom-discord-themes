@@ -29,12 +29,15 @@
 .activity_a31c43 { /* ...except this */
     flex-wrap: nowrap;
 }
-[class*="descriptionClamp_"] { /* disable line clamp of Bios */
+[class*="descriptionClamp_"], [class*="lineClamp2Plus_"] { /* disable line clamp of Bios */
     max-height: max-content;
     -webkit-line-clamp: unset !important;
 }
 [class*="viewFullBio_"] { /* we already see it. */
     display: none;
+}
+.hiddenMembers_cbd271 { /* Servers with only a few members might have their size screwed, so let's fix that */
+    height: 100%;
 }
 .children_fc4f04 { /* names in DMs next to "AKA" will cause top bar to expand to over 1k px in height */
     max-height: 64px;
