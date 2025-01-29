@@ -2,7 +2,7 @@
  * @name Condensed Chat Icons | Source
  * @description So many plugins put their silly little icon in this already dense spot. On a 4:3 monitor that is straight up hell!
  * @author Lopolin
- * @version 1.0
+ * @version 1.1
  * @authorId 629692905480650763
  * @source https://github.com/Lopolin-LP/custom-discord-themes/condensed-chat-icons/
  * @website https://lopolin-lp.github.io/
@@ -10,41 +10,45 @@
 */
 
 /* customize your values here!! */
-.channelTextArea_bdf0de {
+[class*="channelTextArea_"] {
     ---min-width-of-text-area: var(--min-width-of-text-area, 60%); /* default is 60% */
 }
 
 /* real css, do not touch. */
-.channelTextArea_bdf0de .buttons_bdf0de {
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    overflow-x: visible;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-right: 0;
-    height: fit-content; /* also any percentage number will work; do not ask how on earth this makes sense. auto doesn't work cuz it screws over some things. */
-    max-width: 100%;
-    min-width: var(--primary-size-icons);
-    --primary-size-icons: var(--custom-channel-textarea-text-area-height);
-    flex-grow: 1;
-}
-.channelTextArea_bdf0de .buttons_bdf0de::-webkit-scrollbar {
-    display: none;
-}
-.channelTextArea_bdf0de .textArea_bdf0de {
-    min-width: var(---min-width-of-text-area, 60%);
-    flex-basis: content;
-}
-.channelTextArea_bdf0de .buttons_bdf0de > * {
-    width: var(--primary-size-icons);
-    height: var(--primary-size-icons);
-    min-width: var(--primary-size-icons);
-    min-height: var(--primary-size-icons);
-    justify-content: center;
-}
-:where(.outer_c69a7b).panel_c69a7b {
-    /* Consistent sizing of side panel */
-    min-width: 340px;
-    max-width: 340px;
+[class*="chat_"] > [class*="content_"] {
+    [class*="channelTextArea_"] {
+        [class*="buttons_"] {
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            overflow-x: visible;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-right: 0;
+            height: fit-content; /* also any percentage number will work; do not ask how on earth this makes sense. auto doesn't work cuz it screws over some things. */
+            max-width: 100%;
+            min-width: var(--primary-size-icons);
+            --primary-size-icons: var(--custom-channel-textarea-text-area-height);
+            flex-grow: 1;
+        }
+        [class*="buttons_"]::-webkit-scrollbar {
+            display: none;
+        }
+        [class*="textArea_"] {
+            min-width: var(---min-width-of-text-area, 60%);
+            flex-basis: content;
+        }
+        [class*="buttons_"] > * {
+            width: var(--primary-size-icons);
+            height: var(--primary-size-icons);
+            min-width: var(--primary-size-icons);
+            min-height: var(--primary-size-icons);
+            justify-content: center;
+        }
+    }
+    > :where([class*="outer_"])[class*="panel_"] { /* don't question the syntax */
+        /* Consistent sizing of side panel */
+        min-width: 340px;
+        max-width: 340px;
+    }
 }

@@ -21,28 +21,26 @@
 /* ------ */
 /* the bg */
 /* ------ */
-/* html:has(.content_a4d4d9 .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) */
-/* html:has(.wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) #app-mount::after { */
 
 /* hopefully it doesn't need to check EVERYTHING by making this as specific as possible */
-:root:has(body > #app-mount > .appAsidePanelWrapper_bd26cc > .notAppAsidePanel_bd26cc > .app_bd26cc > .app_a01fb1 > .layers_d4b6c5.layers_a01fb1 > .layer_d4b6c5.baseLayer_d4b6c5 > .container_a4d4d9 > .base_a4d4d9 > .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 > .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) {
+:root:has([class*="sidebar_"] > [class*="panels_"] [class*="wrapper_"][class*="avatar_"][aria-label*="Do Not Disturb"]) {
     --dnd-dc-d-hideit: hidden !important;
     --dnd-dc-d-noneit: none !important;
     --dnd-dc-d-border-radius: 10px;
     --dnd-dc-d-lowerbg: #0000;
-}
-:root:has(body > #app-mount > .appAsidePanelWrapper_bd26cc > .notAppAsidePanel_bd26cc > .app_bd26cc > .app_a01fb1 > .layers_d4b6c5.layers_a01fb1 > .layer_d4b6c5.baseLayer_d4b6c5 > .container_a4d4d9 > .base_a4d4d9 > .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 > .container_b2ca13 .wrapper_c51b4e.avatar_b2ca13[aria-label*="Do Not Disturb"]) #app-mount::after {
-    content: var(---message-on-dnd, "");
-    font-size: var(---message-size-on-dnd, 10vw);
-    background: var(---background-on-dnd);
-    color: var(---message-color-dnd);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    #app-mount::after {
+        content: var(---message-on-dnd, "");
+        font-size: var(---message-size-on-dnd, 10vw);
+        background: var(---background-on-dnd);
+        color: var(---message-color-dnd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /* --------------- */
@@ -50,31 +48,26 @@
 /* --------------- */
 
 /* disable server list */
-/* disable server list */
-.container_a4d4d9 .wrapper_fea3ef.guilds_a4d4d9,
+[class*="container_"] [class*="wrapper_"][class*="guilds_"],
 /* disable main content */
-.base_a4d4d9 .content_a4d4d9 > *:not(:first-child),
+[class*="base_"] > [class*="content_"] > *:not(:first-child),
 /* sidebar, except lower modal */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > *:not(.panels_a4d4d9) {
+[class*="base_"] > [class*="content_"] > [class*="sidebar_"] > *:not([class*="panels_"]) {
     visibility: var(--dnd-dc-d-hideit, revert);
 }
 
 /* minimize account view */
-#popout_61 .userPopoutOverlayBackground_c69a7b.overlayBackground_c69a7b > :not(.menu_d90b3d.flexible_d90b3d.menu_ad5fac, .menu_d90b3d.flexible_d90b3d.menu_ad5fac > *) {
-    display: var(--dnd-dc-d-noneit, revert);
+[class*="accountProfilePopoutWrapper_"] [class*="body_"] > :not([class*="menus_"]) {
+    display: var(--dnd-dc-d-noneit, flex);
 }
 
 /* ---------------------- */
 /* extras for lower modal */
 /* ---------------------- */
-/* modal itself */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9,
-/* container with user */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_b2ca13,
-/* container with vc */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .container_adcaac,
-/* activity above modal */
-.base_a4d4d9 .content_a4d4d9 > .sidebar_a4d4d9 > .panels_a4d4d9 .panel_bf1a22.activityPanel_a4d4d9 {
-    border-radius: var(--dnd-dc-d-border-radius, revert);
-    background: var(--dnd-dc-d-lowerbg, revert);
+[class*="base_"] > [class*="content_"] > [class*="sidebar_"] > [class*="panels_"] {
+    /* 1. container with user; 2. modal itself, 3. container with vc, 4. activity above modal */
+    &, > [class*="container_"], > [class*="panel_"][class*="activityPanel_"] {
+        border-radius: var(--dnd-dc-d-border-radius, revert);
+        background: var(--dnd-dc-d-lowerbg, revert);
+    }
 }
