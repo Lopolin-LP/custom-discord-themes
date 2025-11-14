@@ -2,7 +2,7 @@
  * @name Condensed Chat Icons | Source
  * @description So many plugins put their silly little icon in this already dense spot. On a 4:3 monitor that is straight up hell!
  * @author Lopolin
- * @version 1.1
+ * @version 1.2
  * @authorId 629692905480650763
  * @source https://github.com/Lopolin-LP/custom-discord-themes/condensed-chat-icons/
  * @website https://lopolin-lp.github.io/
@@ -18,17 +18,17 @@
 [class*="chat_"] > [class*="content_"] {
     [class*="channelTextArea_"] {
         [class*="buttons_"] {
+            display: flex;
+            justify-content: end;
             flex-wrap: wrap;
             overflow-y: scroll;
             overflow-x: visible;
-            display: flex;
-            justify-content: end;
             align-items: center;
             margin-right: 0;
             height: fit-content; /* also any percentage number will work; do not ask how on earth this makes sense. auto doesn't work cuz it screws over some things. */
             max-width: 100%;
             min-width: var(--primary-size-icons);
-            --primary-size-icons: var(--custom-channel-textarea-text-area-height);
+            --primary-size-icons: var(--span-32);
             flex-grow: 1;
         }
         [class*="buttons_"]::-webkit-scrollbar {
@@ -44,6 +44,7 @@
             min-width: var(--primary-size-icons);
             min-height: var(--primary-size-icons);
             justify-content: center;
+            display: flex;
         }
     }
     > :where([class*="outer_"])[class*="panel_"] { /* don't question the syntax */
