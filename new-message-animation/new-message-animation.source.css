@@ -1,0 +1,110 @@
+/**
+ * @name New Message Animation | Source
+ * @author Lopolin
+ * @authorId 629692905480650763
+ * @authorLink https://github.com/lopolin-lp
+ * @description Sliding into your DMs real smooth
+ * @license GPLv3
+ * @version 1.0
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/new-message-animation/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+:root {
+    ---background-new-message-color: var(--background-new-message-color-user, #70f4);
+}
+
+@property --background-new-message-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+[class*="messagesWrapper_"].group-spacing-16 [class*="scrollerInner_"] { /* Wait for current chat to load */
+    animation: 5s linear 0s 1 normal forwards running page-load;
+
+    > li { /* animate the message background */
+        animation: 2s ease-in 0s 1 normal none running new-message;
+        --background-new-message: linear-gradient(to right, transparent 0%, transparent 33%, var(--background-new-message-color) 66%, var(--background-new-message-color) 100%);
+
+        > *:not(:has([class*="isSending_"])) { /* Twitch drop in */
+            animation: 0.2s ease-out 0s 1 normal none running new-message-twitch;
+        }
+
+        > *:has([class*="isSending_"]) { /* Twitch drop in - for sending messages */
+            animation: 1s ease-out 0s 1 normal none running new-message-twitch-sending;
+        }
+    }
+    #messagesNavigationDescription + *:not([id]) { /* animate the message background - loading messages - bg color */
+        content-visibility: auto;
+        --background-new-message-color: var(---background-new-message-color); /* keep seperate so that color is there even during page-load */
+
+        > * { /* animate the message background - loading messages */
+            content-visibility: auto;
+            animation: 2s linear -1s infinite alternate none running new-message-fadeout-load;
+            --background-new-message: linear-gradient(to right, transparent 0%, transparent 20%, var(--background-new-message-color) 50%, transparent 80%, transparent 100%);
+        }
+    }
+}
+@keyframes page-load {
+    0% {
+        --background-new-message-color: transparent;
+        --transform-new-message: 0%;
+    }
+    99% {
+        --background-new-message-color: transparent;
+        --transform-new-message: 0%;
+    }
+    100% {
+        --background-new-message-color: var(---background-new-message-color);
+        --transform-new-message: -100%;
+    }
+}
+@keyframes new-message {
+    0% {
+        background: var(--background-new-message);
+        background-size: 300% 100%;
+        background-position: 100% 0%;
+    }
+    66% {
+        background: var(--background-new-message);
+        background-size: 300% 100%;
+        background-position: 100% 0%;
+    }
+    100% {
+        background: var(--background-new-message);
+        background-size: 300% 100%;
+        background-position: 0% 0%;
+    }
+}
+@keyframes new-message-twitch {
+    0% {
+        transform: translateX(var(--transform-new-message));
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes new-message-twitch-sending {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes new-message-fadeout-load {
+    0% {
+        background: var(--background-new-message);
+        background-size: 500% 100%;
+        background-position: 100% 0%;
+    }
+    100% {
+        background: var(--background-new-message);
+        background-size: 500% 100%;
+        background-position: 0% 0%;
+    }
+}

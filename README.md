@@ -57,6 +57,7 @@ Name | Description | Notes
 [DnD Disable DC](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/dnd-disable-dc) | Removes everything in Discord when on DnD. Yes, no distraction, what DnD should be. | 2
 [Full Text](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/full-text) | Discord often truncates the text of many Elements (channels, usernames, etc.), this disables that and wraps text accordingly.
 [More Tag Colors (Vencord)](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/more-tag-colors-vencord) | **NOTICE: This relied on a Vencord Plugin to make it work. It has since ceased to exist.** Makes Bot/Admin/Staff Tags colorful.
+[New Message Animation](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/new-message-animation) | New message animation! Messages now drop in from the left with a nice color background slowing fading out after a short time. | 2
 [Username Chat Readability On Hover](https://github.com/Lopolin-LP/custom-discord-themes/tree/main/username-chat-readability-on-hover) | Black Theme, Black Username. Good luck reading it in chat. Now you can when you hover over it.
 
 1 - Requires different installation steps, see `README.md`<br>
@@ -67,14 +68,27 @@ In the root directory you'll find a file called `snippets.css`. In this I have a
 
 Currently the following Snippets are available (in order as in file):
 - make scrollbars exist
-- make Spoilers Visible (as my background is pure black)
+- Limit server profile size
 - disable close DMs
+- Forcefully improve Perfomance for scroller
 - highlight channel of any channel you like in DMs list
-- colored pins
-- move app button in bottom bar to left
 - gay status bubble
 - fully visible profile effects
+- Big Translate button
+- Fix height of channel status
+- Disable "Send longer messages with Discord Nitro!"
+- banner for non-vesktop platforms (linux)
+- neon pink vc icon
+- inform me of people in vc and unread messages
+
+Some of these were archived/deleted:
+- make Spoilers Visible
+- Text message hover
+- Fix left sidebar having weird outline when focused
+- colored pins
+- move app button in bottom bar to left
 - Resize Sidebar
 
 ## ToDo
-*Nothing!*
+- Go through all plugins, and check & update functionality
+- add more customization to New Message Animation

@@ -4,38 +4,201 @@
     background-color: #7f7f7f !important;
 }
 
-/* make Spoilers Visible (as my background is pure black) */
-[class^="spoilerContent"] {
-    background-color: #111;
+/* Limit server profile size */
+[class*="outer_"][style*="--profile-gradient"] > [class*="inner_"] {
+    max-height: 95vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: block;
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+    }
+}
+[class*="content_"] > [class*="outer_"][style*="--profile-gradient"] > [class*="inner_"] {
+    max-height: 100vh;
 }
 
 /* disable close DMs */
 [class*="channel_"] div[class*="closeButton_"][aria-label="Close DM"] {
-    display: none;
+    div:has(> &) {
+        display: none;
+    }
+}
+
+/* Forcefully improve Performance for scroller */
+[class*="scroller_"] {
+    will-change: scroll-position, height, width;
 }
 
 /* highlight channel of any channel you like in DMs list, you need to change a few things tho */
-[class*=channel_][class*=container_] > *:has(a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"]) {
-    background-image: url("vencord:///themes/FILE-IN-THEMES-DIR.png");
-    background-size: cover;
-    background-position: center;
-    background-position-y: -40px;
-    border-radius: 20px;
-}
-[class*=channel_][class*=container_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
-    background: linear-gradient(135deg, #ff007f3f 50%, #ff00ff3f);
-    border-radius: 20px;
-    min-height: 150px;
-    height: 100%;
-    width: 100%;
-    color: #000;
-    text-shadow: 2px 2px 2px #ffff, -2px -2px 2px #ffff,
-                 -2px 2px 2px #ffff, 2px -2px 2px #ffff;
-    backdrop-filter: blur(8px);
+nav[class*="privateChannels_"]  {
+    [class*=channel_][class*=container_] > *:has(a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"]) {
+        background-image: url("vencord:///themes/FILE-IN-THEMES-DIR.png");
+        background-size: cover;
+        background-position: center;
+        background-position-y: -40px;
+        border-radius: 20px;
+    }
+    [class*=channel_][class*=container_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
+        background: linear-gradient(135deg, #ff007f3f 50%, #ff00ff3f);
+        border-radius: 20px;
+        min-height: 150px;
+        height: 100%;
+        width: 100%;
+        color: #000;
+        -webkit-text-stroke: 4px #fff;
+        text-shadow: 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff;
+        paint-order: stroke fill;
+        backdrop-filter: blur(8px);
+        mask-image: none !important;
+    }
+    [class*=channel_][class*=container_] [class*=selected_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
+        background: linear-gradient(135deg, #ff007f7f 50%, #ff00ff7f);
+    }
 }
 
-[class*=channel_][class*=container_] [class*=selected_] a[href="/channels/@me/CHANNEL-ID-NOT-USER-ID"] {
-    background: linear-gradient(135deg, #ff007f7f 50%, #ff00ff7f);
+/* gay status bubble */
+aside[aria-labelledby*="user-profile-sidebar-heading"] div[role="tooltip"] > [class*="outer_"] {
+    &, &:before, &:after {
+        border-color: #fff !important;
+    }
+    &:before, &:after {
+        background: linear-gradient(in oklab 90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
+        background-size: 181px 3em;
+        backdrop-filter: brightness(0%);
+    }
+    &:before {
+        background-position: left -10px top 8px;
+    }
+    &:after {
+        background-position: left 3px top -15px;
+    }
+    > [class*="inner_"] {
+        background: linear-gradient(in oklab 90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
+        backdrop-filter: brightness(0%);
+        background-color: unset!important;
+        text-shadow: 2px 2px 4px #000, 2px 2px 4px #000;
+    }
+}
+
+/* fully visible profile effects */
+div[style*="--profile-gradient"] {
+    [class*="profileEffects"] {
+        transition: backdrop-filter ease-in-out 0.2s, opacity ease-in-out 0.2s;
+    }
+    :not(:has([class*="fullSizeOuter_"])):not(:hover) [class*="profileEffects"]:has(img[src*="intro.png"]) {
+        backdrop-filter: blur(4px);
+        opacity: 100%;
+    }
+}
+
+/* Big Translate button */
+[class*=buttonsInner_] > span:nth-child(14)  { /* you have to experiment around with this value */
+    transform: scaleY(5) scaleX(3.5) translateY(-10px);
+    margin: 0 40px;
+}
+
+/* Fix height of channel status */
+[class*="container_"] { /* INFO: I don't know if this still works */
+    [class*="connection_"] {
+        height: auto;
+        > [class*="inner_"] {
+            height: inherit;
+            *:not(:is(svg, span, a)) {
+                height: auto;
+            }
+            [class*="lineClamp1_"] {
+                text-wrap: wrap;
+            }
+        }
+    }
+}
+
+/* Disable "Send longer messages with Discord Nitro!" */
+[class*="characterCount_"] > [class*="upsell_"] {
+    display: none;
+}
+
+/* banner for non-vesktop platforms (linux) */
+html.platform-linux [class*="app_"] [class*="bar_"] > [class*="title_"]::before {
+    background: linear-gradient(to right, transparent 0%, transparent 25%, red 30%, red 70%, transparent 75%, transparent 100%);
+    color: black;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    content: 'NOT VESKTOP';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 150%;
+    transform: scaleX(200%);
+    z-index: 0;
+    position: absolute;
+}
+
+/* neon pink vc icon */
+.vc-uvs-speaker {
+    color: #ff00bb;
+}
+
+/* inform me of people in vc and unread messages */
+:root {
+    --text-shadow-for-colored-channels: 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black;
+}
+:is(nav[class*="privateChannels_"], div[aria-label="Members"]) {
+    [class*=container_] > *:has(.vc-uvs-speaker) {
+        /* -webkit-text-stroke: 4px black; */
+        text-shadow: var(--text-shadow-for-colored-channels);
+        color: white;
+        background-color: #00cccc7f;
+        paint-order: markers stroke fill;
+    }
+}
+@keyframes unreadMessage {
+    0% {
+        background-color: #ff0000;
+        /* color: white; */
+    }
+    100% {
+        background-color: white;
+        /* color: black; */
+    }
+}
+nav[class*="privateChannels_"] {
+    [class*=container_]:has([class*=unreadPill_]) > *:has(a) {
+        text-shadow: var(--text-shadow-for-colored-channels);
+        animation: 2s ease-in-out 0s infinite alternate unreadMessage;
+    }
+}
+
+/* ================ */
+/* SNIPPETS ARCHIVE */
+/* ================ */
+/*
+
+these are
+- not updated anymore
+- serve little purpose, as their original
+  functionality is lost or no longer necessary
+
+*/
+
+/* make Spoilers Visible */
+[class*="spoilerContent"] {
+    background-color: #666;
+}
+
+/* Text message hover, so I can see which message I'm hovering */
+[class*="messageListItem_"]:hover {
+    background-color: #ffffff05;
+}
+
+/* Fix left sidebar having weird outline when focused */
+ul[role="tree"] {
+    outline: 0;
 }
 
 /* colored pins (vencord). requires a lot of manual work */
@@ -43,24 +206,24 @@
 /* START COLORED PINS */
 
 /*              Put exact color values of your colored category here ->  (RRR, GGG, BBB) */
-.content_eed6a8 [class*="vc-pindms-section-container"][style*="color: rgb(255, 0, 127);"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+nav[class*="privateChannels_"] [class*="vc-pindms-section-container"][style*="color: rgb(255, 0, 127);"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
     color: #ff007f; /* color you would like to use */
 }
 /* and duplicate the three lines above (starting with ".content...", "color:..." and "}" respectively) and repeat for each category.
 THEY MUST BE IN ORDER AS THE CATEGORIES */
 
-.content_eed6a8 [class*="vc-pindms-section-container"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+nav[class*="privateChannels_"] [class*="vc-pindms-section-container"] ~ li:has(~ .privateChannelsHeaderContainer_c47fa9) {
     border-left: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
     border-right: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
     border-radius: 0;
     background-color: color-mix(in srgb, currentColor 12.5%, transparent);
 }
-.content_eed6a8 [class*="vc-pindms-section-container"] + li:has(~ .privateChannelsHeaderContainer_c47fa9) {
+nav[class*="privateChannels_"] [class*="vc-pindms-section-container"] + li:has(~ .privateChannelsHeaderContainer_c47fa9) {
     border-top: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
-.content_eed6a8 [class*="vc-pindms-section-container"] ~ li:has(+ .privateChannelsHeaderContainer_c47fa9) {
+nav[class*="privateChannels_"] [class*="vc-pindms-section-container"] ~ li:has(+ .privateChannelsHeaderContainer_c47fa9) {
     border-bottom: 2px color-mix(in srgb, currentColor 50%, transparent 50%) solid;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -68,66 +231,15 @@ THEY MUST BE IN ORDER AS THE CATEGORIES */
 
 /* END COLORED PINS */
 
-/* move app button in bottom bar to left */
-:root {
-    --app-button-sickerheight: 0px;
-    --app-button-mediaheight: 0px;
-}
-:root:has(.scrollableContainer_bdf0de.themedBackground_bdf0de .stickerPreviews_ef287f) {
-    --app-button-sickerheight: calc(51px + 20px + 1px);
-}
-:root:has(.scrollableContainer_bdf0de.themedBackground_bdf0de .channelAttachmentArea_e8c527) {
-    --app-button-mediaheight: calc(216px + 30px + 3px);
-}
-div[class^="channelAppLauncher_"] {
-    position: absolute;
-    margin-left: 0px;
-    transform: translateY(calc(var(--app-button-mediaheight) + var(--app-button-sickerheight) + 0%));
-}
-div[class^="channelAppLauncher_"] button {
-    background-color: transparent;
-}
-div[class^="channelBottomBarArea_"]:has(div[class^="replyBar_"]) div[class^="channelAppLauncher_"] {
-    margin-top: 32px;
-}
-div[class*="sansAttachButton_"] {
-    padding-left: 46px;
-}
-div[class^="channelBottomBarArea_"] {
-    align-items: flex-start;
-}
-div[class*="positionLayer_"]:has([class*="positionContainer_"][aria-label="Application Launcher"]) {
-    left: 312px !important; /* 72px + 240px */
-    right: unset !important;
-}
-div[class*="barBase_"] {
-    right: 16px;
-}
+/* ================ */
+/* DELETED SNIPPETS */
+/* ================ */
+/*
 
-/* gay status bubble */
-[class*="statusBubbleOuter_"], [class*="statusBubbleOuter_"]:before, [class*="statusBubbleOuter_"]:after {
-    border-color: #fff !important;
-}
-[class*="statusBubble_"] {
-    background: linear-gradient(90deg, #ff0000aa, #ff7f00aa, #ffff00aa, #00ff00aa, #00ffffaa, #0000ffaa, #7f00ffaa, #ff00ffaa);
-    backdrop-filter: brightness(0%);
-    background-color: unset!important;
-}
+these are deleted because the modified elements
+in discord don't exist anymore. This is also just a list:
 
-/* fully visible profile effects */
-[class*="profileEffects"] {
-    transition: backdrop-filter ease-in-out 0.2s, opacity ease-in-out 0.2s;
-}
-:not(:has([class*="fullSizeOuter_"])):not(:hover) [class*="profileEffects"]:has(img[src*="intro.png"]) {
-    backdrop-filter: blur(4px);
-    opacity: 100%;
-}
+- move app button in bottom bar to left
+- Resize Sidebar
 
-/* Resize Sidebar */
-.sidebar_a4d4d9 {
-    resize: horizontal;
-}
-.sidebar_a4d4d9 ul > *, .friendsButtonContainer_f0963d > li {
-    width: 100%;
-    max-width: calc(100% - 8px);
-}
+*/

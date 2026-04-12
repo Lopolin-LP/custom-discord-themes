@@ -1,0 +1,20 @@
+/**
+ * @name New Message Animation
+ * @author Lopolin
+ * @authorId 629692905480650763
+ * @authorLink https://github.com/lopolin-lp
+ * @description Sliding into your DMs real smooth
+ * @license GPLv3
+ * @version 1.0
+ * @source https://github.com/Lopolin-LP/custom-discord-themes/new-message-animation/
+ * @website https://lopolin-lp.github.io/
+ * @invite https://discord.gg/pduA47hxx7
+*/
+
+/* don't touch */
+@import url(https://raw.githubusercontent.com/Lopolin-LP/custom-discord-themes/main/new-message-animation/new-message-animation.source.css);
+
+/* customizable values */
+:root {
+    --background-new-message-color-user: #70f4;
+}
