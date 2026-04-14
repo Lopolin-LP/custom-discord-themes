@@ -60,7 +60,7 @@ nav[class*="privateChannels_"]  {
 }
 
 /* gay status bubble */
-aside[aria-labelledby*="user-profile-sidebar-heading"] div[role="tooltip"] > [class*="outer_"] {
+:is(.user-profile-sidebar, .user-profile-popout, .user-profile-modal-v2) div[role="tooltip"] > [class*="outer_"] {
     &, &:before, &:after {
         border-color: #fff !important;
     }
@@ -80,6 +80,7 @@ aside[aria-labelledby*="user-profile-sidebar-heading"] div[role="tooltip"] > [cl
         backdrop-filter: brightness(0%);
         background-color: unset!important;
         text-shadow: 2px 2px 4px #000, 2px 2px 4px #000;
+        border-radius: inherit;
     }
 }
 
